@@ -91,6 +91,25 @@ module.exports = function (cssWithMappingToString) {
 
 /***/ }),
 
+/***/ 122:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(989);
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.id, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = (__webpack_require__(424)/* ["default"] */ .A)
+var update = add("5ec85c92", content, false, {"ssrId":true});
+// Hot Module Replacement
+if(false) // removed by dead control flow
+{}
+
+/***/ }),
+
 /***/ 226:
 /***/ ((module) => {
 
@@ -102,26 +121,21 @@ module.exports = function (i) {
 
 /***/ }),
 
-/***/ 366:
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ 341:
+/***/ ((__unused_webpack_module, exports) => {
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_101_3_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(226);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_101_3_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_101_3_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_101_3_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(99);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_101_3_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_101_3_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-// Imports
+var __webpack_unused_export__;
 
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_101_3_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_2_webpack_5_101_3_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, `.th-phone-fab[data-v-1d4892c0]{position:fixed;right:18px;bottom:18px;z-index:99999;width:44px;height:44px;border-radius:22px;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,0.25);cursor:pointer;-webkit-user-select:none;user-select:none;transition:transform 0.2s ease,box-shadow 0.2s ease;font-size:20px}.th-phone-fab[data-v-1d4892c0]:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,0.28)}.th-phone-wrapper[data-v-1d4892c0]{position:fixed;right:24px;bottom:78px;z-index:99998;width:360px;height:760px;pointer-events:none}.th-phone[data-v-1d4892c0]{position:absolute;inset:0;margin:auto;width:100%;height:100%;border-radius:42px;background:#0a0a0a;box-shadow:0 24px 60px rgba(0,0,0,0.45),inset 0 0 0 10px #1a1a1a;overflow:hidden;transform:translateY(20px) scale(0.98);opacity:0;transition:transform 0.28s cubic-bezier(0.2,0.7,0.2,1),opacity 0.28s;pointer-events:auto}.th-phone--open[data-v-1d4892c0]{transform:translateY(0) scale(1);opacity:1}.th-notch[data-v-1d4892c0]{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:180px;height:34px;background:#000;border-radius:18px;box-shadow:0 0 0 2px #121212}.th-screen[data-v-1d4892c0]{position:absolute;inset:8px;border-radius:34px;background:linear-gradient(180deg,#111,#0b0b0b);overflow:hidden}.th-statusbar[data-v-1d4892c0]{height:24px;display:flex;align-items:center;justify-content:space-between;padding:6px 14px;color:#cfcfcf;font-size:12px}.th-apps[data-v-1d4892c0]{position:absolute;top:24px;left:0;right:0;bottom:0;padding:48px 18px 18px;display:flex;flex-direction:column;gap:12px}.th-dock[data-v-1d4892c0]{position:absolute;bottom:16px;left:16px;right:16px;height:70px;background:rgba(255,255,255,0.06);border-radius:18px;display:flex;align-items:center;justify-content:center;gap:16px;backdrop-filter:blur(10px)}.th-app-icon[data-v-1d4892c0]{width:56px;height:56px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.05),0 10px 20px rgba(0,0,0,0.35)}.th-app-icon--wechat[data-v-1d4892c0]{background:#07c160}.th-app-label[data-v-1d4892c0]{text-align:center;color:#d0d0d0;font-size:12px;margin-top:6px}.th-grid[data-v-1d4892c0]{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.th-center[data-v-1d4892c0]{display:flex;flex-direction:column;align-items:center}.th-wechat[data-v-1d4892c0]{position:absolute;inset:0;display:flex;flex-direction:column;background:#fff;color:#111}.th-wechat-topbar[data-v-1d4892c0]{height:52px;display:flex;align-items:center;padding:0 12px;gap:8px;background:#f5f5f5;border-bottom:1px solid #eee}.th-wechat-back[data-v-1d4892c0]{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer}.th-wechat-title[data-v-1d4892c0]{font-weight:600}.th-wechat-list[data-v-1d4892c0]{flex:1;overflow:auto;background:#fff}.th-wechat-item[data-v-1d4892c0]{display:flex;gap:10px;padding:12px;border-bottom:1px solid #f2f2f2;cursor:pointer}.th-wechat-avatar[data-v-1d4892c0]{width:42px;height:42px;border-radius:8px;background:#07c160;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}.th-wechat-meta[data-v-1d4892c0]{flex:1;display:flex;flex-direction:column}.th-wechat-name[data-v-1d4892c0]{font-weight:600}.th-wechat-preview[data-v-1d4892c0]{color:#666;font-size:12px;margin-top:4px}.th-wechat-chat[data-v-1d4892c0]{flex:1;display:flex;flex-direction:column;background:#eaeaea}.th-wechat-msgs[data-v-1d4892c0]{flex:1;padding:12px;overflow:auto;display:flex;flex-direction:column;gap:8px}.th-msg[data-v-1d4892c0]{max-width:70%;padding:8px 10px;border-radius:8px;background:#fff;align-self:flex-start}.th-msg.me[data-v-1d4892c0]{background:#a7e2b3;align-self:flex-end}.th-wechat-input[data-v-1d4892c0]{height:54px;background:#f6f6f6;border-top:1px solid #e6e6e6;display:flex;align-items:center;gap:8px;padding:6px 8px}.th-wechat-input input[data-v-1d4892c0]{flex:1;height:36px;border-radius:18px;border:1px solid #ddd;padding:0 12px;outline:none}.th-wechat-send[data-v-1d4892c0]{height:36px;padding:0 12px;border-radius:18px;background:#07c160;color:#fff;font-weight:600;display:flex;align-items:center;cursor:pointer}
-`, ""]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+__webpack_unused_export__ = ({ value: true });
+// runtime helper for setting properties on components
+// in a tree-shakable way
+exports.A = (sfc, props) => {
+    const target = sfc.__vccOpts || sfc;
+    for (const [key, val] of props) {
+        target[key] = val;
+    }
+    return target;
+};
 
 
 /***/ }),
@@ -391,40 +405,26 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ 653:
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+/***/ 989:
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-// style-loader: Adds some css to the DOM by adding a <style> tag
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_101_3_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(226);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_101_3_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_101_3_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_101_3_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(99);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_101_3_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_101_3_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
 
-// load the styles
-var content = __webpack_require__(366);
-if(content.__esModule) content = content.default;
-if(typeof content === 'string') content = [[module.id, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = (__webpack_require__(424)/* ["default"] */ .A)
-var update = add("62c186a1", content, false, {"ssrId":true});
-// Hot Module Replacement
-if(false) // removed by dead control flow
-{}
 
-/***/ }),
-
-/***/ 772:
-/***/ ((__unused_webpack_module, exports) => {
-
-var __webpack_unused_export__;
-
-__webpack_unused_export__ = ({ value: true });
-// runtime helper for setting properties on components
-// in a tree-shakable way
-exports.A = (sfc, props) => {
-    const target = sfc.__vccOpts || sfc;
-    for (const [key, val] of props) {
-        target[key] = val;
-    }
-    return target;
-};
+var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_101_3_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_2_webpack_5_101_3_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `.th-phone-fab[data-v-1d4892c0]{position:fixed;right:18px;bottom:18px;z-index:99999;width:44px;height:44px;border-radius:22px;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,0.25);cursor:pointer;-webkit-user-select:none;user-select:none;transition:transform 0.2s ease,box-shadow 0.2s ease;font-size:20px}.th-phone-fab[data-v-1d4892c0]:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,0.28)}.th-phone-wrapper[data-v-1d4892c0]{position:fixed;right:24px;bottom:78px;z-index:99998;width:360px;height:760px;pointer-events:none}.th-phone[data-v-1d4892c0]{position:absolute;inset:0;margin:auto;width:100%;height:100%;border-radius:42px;background:#0a0a0a;box-shadow:0 24px 60px rgba(0,0,0,0.45),inset 0 0 0 10px #1a1a1a;overflow:hidden;transform:translateY(20px) scale(0.98);opacity:0;transition:transform 0.28s cubic-bezier(0.2,0.7,0.2,1),opacity 0.28s;pointer-events:auto}.th-phone--open[data-v-1d4892c0]{transform:translateY(0) scale(1);opacity:1}.th-notch[data-v-1d4892c0]{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:180px;height:34px;background:#000;border-radius:18px;box-shadow:0 0 0 2px #121212}.th-screen[data-v-1d4892c0]{position:absolute;inset:8px;border-radius:34px;background:linear-gradient(180deg,#111,#0b0b0b);overflow:hidden}.th-statusbar[data-v-1d4892c0]{height:24px;display:flex;align-items:center;justify-content:space-between;padding:6px 14px;color:#cfcfcf;font-size:12px}.th-apps[data-v-1d4892c0]{position:absolute;top:24px;left:0;right:0;bottom:0;padding:48px 18px 18px;display:flex;flex-direction:column;gap:12px}.th-dock[data-v-1d4892c0]{position:absolute;bottom:16px;left:16px;right:16px;height:70px;background:rgba(255,255,255,0.06);border-radius:18px;display:flex;align-items:center;justify-content:center;gap:16px;backdrop-filter:blur(10px)}.th-app-icon[data-v-1d4892c0]{width:56px;height:56px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.05),0 10px 20px rgba(0,0,0,0.35)}.th-app-icon--wechat[data-v-1d4892c0]{background:#07c160}.th-app-label[data-v-1d4892c0]{text-align:center;color:#d0d0d0;font-size:12px;margin-top:6px}.th-grid[data-v-1d4892c0]{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.th-center[data-v-1d4892c0]{display:flex;flex-direction:column;align-items:center}.th-wechat[data-v-1d4892c0]{position:absolute;inset:0;display:flex;flex-direction:column;background:#fff;color:#111}.th-wechat-topbar[data-v-1d4892c0]{height:52px;display:flex;align-items:center;padding:0 12px;gap:8px;background:#f5f5f5;border-bottom:1px solid #eee}.th-wechat-back[data-v-1d4892c0]{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer}.th-wechat-title[data-v-1d4892c0]{font-weight:600}.th-wechat-list[data-v-1d4892c0]{flex:1;overflow:auto;background:#fff}.th-wechat-item[data-v-1d4892c0]{display:flex;gap:10px;padding:12px;border-bottom:1px solid #f2f2f2;cursor:pointer}.th-wechat-avatar[data-v-1d4892c0]{width:42px;height:42px;border-radius:8px;background:#07c160;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}.th-wechat-meta[data-v-1d4892c0]{flex:1;display:flex;flex-direction:column}.th-wechat-name[data-v-1d4892c0]{font-weight:600}.th-wechat-preview[data-v-1d4892c0]{color:#666;font-size:12px;margin-top:4px}.th-wechat-chat[data-v-1d4892c0]{flex:1;display:flex;flex-direction:column;background:#eaeaea}.th-wechat-msgs[data-v-1d4892c0]{flex:1;padding:12px;overflow:auto;display:flex;flex-direction:column;gap:8px}.th-msg[data-v-1d4892c0]{max-width:70%;padding:8px 10px;border-radius:8px;background:#fff;align-self:flex-start}.th-msg.me[data-v-1d4892c0]{background:#a7e2b3;align-self:flex-end}.th-wechat-input[data-v-1d4892c0]{height:54px;background:#f6f6f6;border-top:1px solid #e6e6e6;display:flex;align-items:center;gap:8px;padding:6px 8px}.th-wechat-input input[data-v-1d4892c0]{flex:1;height:36px;border-radius:18px;border:1px solid #ddd;padding:0 12px;outline:none}.th-wechat-send[data-v-1d4892c0]{height:36px;padding:0 12px;border-radius:18px;background:#07c160;color:#fff;font-weight:600;display:flex;align-items:center;cursor:pointer}
+`, ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
 /***/ })
@@ -506,7 +506,7 @@ const external_namespaceObject = _;
 var external_default = /*#__PURE__*/__webpack_require__.n(external_namespaceObject);
 ;// external "z"
 const external_z_namespaceObject = z;
-;// ./node_modules/.pnpm/ts-loader@9.5.4_typescript@_9428a39fa4868ceec0792d817e2a6d01/node_modules/ts-loader/index.js??clonedRuleSet-46!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.2_c218d30ceef5a043169c87881bb69148/node_modules/vue-loader/dist/index.js??ruleSet[1].rules[4].use[0]!./src/手机脚本/app.vue?vue&type=script&setup=true&lang=ts
+;// ./node_modules/.pnpm/ts-loader@9.5.4_typescript@6.0.0-dev.20250807_webpack@5.101.3/node_modules/ts-loader/index.js??clonedRuleSet-46!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.21_typescript@6.0.0-dev.20250807__webpack@5.101.3/node_modules/vue-loader/dist/index.js??ruleSet[1].rules[4].use[0]!./src/手机脚本/app.vue?vue&type=script&setup=true&lang=ts
 
 
 const _hoisted_1 = { class: "th-screen" };
@@ -751,12 +751,12 @@ const _hoisted_16 = { class: "th-wechat-input" };
 
 ;// ./src/手机脚本/app.vue?vue&type=script&setup=true&lang=ts
  
-// EXTERNAL MODULE: ./node_modules/.pnpm/vue-style-loader@4.1.3/node_modules/vue-style-loader/index.js??clonedRuleSet-49.use[0]!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.101.3/node_modules/css-loader/dist/cjs.js??clonedRuleSet-49.use[1]!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.2_c218d30ceef5a043169c87881bb69148/node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/.pnpm/postcss-loader@8.2.0_postcs_388120e9a2b4112df0bc0673b279dba7/node_modules/postcss-loader/dist/cjs.js!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.2_c218d30ceef5a043169c87881bb69148/node_modules/vue-loader/dist/index.js??ruleSet[1].rules[4].use[0]!./src/手机脚本/app.vue?vue&type=style&index=0&id=1d4892c0&scoped=true&lang=css
-var appvue_type_style_index_0_id_1d4892c0_scoped_true_lang_css = __webpack_require__(653);
+// EXTERNAL MODULE: ./node_modules/.pnpm/vue-style-loader@4.1.3/node_modules/vue-style-loader/index.js??clonedRuleSet-49.use[0]!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.101.3/node_modules/css-loader/dist/cjs.js??clonedRuleSet-49.use[1]!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.21_typescript@6.0.0-dev.20250807__webpack@5.101.3/node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/.pnpm/postcss-loader@8.2.0_postcss@8.5.6_typescript@6.0.0-dev.20250807_webpack@5.101.3/node_modules/postcss-loader/dist/cjs.js!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.21_typescript@6.0.0-dev.20250807__webpack@5.101.3/node_modules/vue-loader/dist/index.js??ruleSet[1].rules[4].use[0]!./src/手机脚本/app.vue?vue&type=style&index=0&id=1d4892c0&scoped=true&lang=css
+var appvue_type_style_index_0_id_1d4892c0_scoped_true_lang_css = __webpack_require__(122);
 ;// ./src/手机脚本/app.vue?vue&type=style&index=0&id=1d4892c0&scoped=true&lang=css
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.2_c218d30ceef5a043169c87881bb69148/node_modules/vue-loader/dist/exportHelper.js
-var exportHelper = __webpack_require__(772);
+// EXTERNAL MODULE: ./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.21_typescript@6.0.0-dev.20250807__webpack@5.101.3/node_modules/vue-loader/dist/exportHelper.js
+var exportHelper = __webpack_require__(341);
 ;// ./src/手机脚本/app.vue
 
 
