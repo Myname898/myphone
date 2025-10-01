@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>手机界面 - 独立版本</title>
+    <style>
+      .phone-container {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        aspect-ratio: 9/19.5;
+        background: #000;
+        border-radius: 30px;
+        padding: 8px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        position: relative;
+      }
+
+      .phone-frame {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 25px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .notch {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120px;
+        height: 25px;
+        background: #000;
+        border-radius: 0 0 15px 15px;
+        z-index: 10;
+      }
+
+      .status-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px 10px;
+        color: white;
+        font-size: 14px;
+        font-weight: 600;
+        position: relative;
+        z-index: 5;
+      }
+
+      .status-left {
+        display: flex;
+        align-items: center;
+      }
+
+      .time {
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      .status-right {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .battery {
+        width: 30px;
+        height: 15px;
+        border: 2px solid white;
+        border-radius: 3px;
+        position: relative;
+      }
+
+      .battery::after {
+        content: '';
+        position: absolute;
+        right: -4px;
+        top: 3px;
+        width: 2px;
+        height: 9px;
+        background: white;
+        border-radius: 0 1px 1px 0;
+      }
+
+      .battery-level {
+        height: 100%;
+        background: #4caf50;
+        border-radius: 1px;
+        transition: width 0.3s ease;
+      }
+
+      .phone-content {
+        height: calc(100% - 60px);
+        padding: 0 20px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        overflow: hidden;
+      }
+
+      .character-card {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+        padding: 15px;
+        display: flex;
+        gap: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .character-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .avatar-placeholder {
+        font-size: 30px;
+      }
+
+      .character-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .character-name {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 700;
+        color: #333;
+      }
+
+      .character-stats {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .stat-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 12px;
+      }
+
+      .stat-label {
+        width: 40px;
+        color: #666;
+        font-weight: 600;
+      }
+
+      .stat-bar {
+        flex: 1;
+        height: 8px;
+        background: #e0e0e0;
+        border-radius: 4px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .stat-fill {
+        height: 100%;
+        border-radius: 4px;
+        transition: width 0.5s ease;
+      }
+
+      .stat-fill.health {
+        background: linear-gradient(90deg, #ff6b6b, #ff8e8e);
+      }
+
+      .stat-fill.mood {
+        background: linear-gradient(90deg, #4ecdc4, #7fdbda);
+      }
+
+      .stat-fill.energy {
+        background: linear-gradient(90deg, #45b7d1, #6bc5d8);
+      }
+
+      .stat-value {
+        width: 35px;
+        text-align: right;
+        color: #333;
+        font-weight: 600;
+      }
+
+      .chat-section {
+        flex: 1;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .chat-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        border-bottom: 1px solid #e0e0e0;
+        background: #f8f9fa;
+      }
+
+      .chat-header h4 {
+        margin: 0;
+        font-size: 16px;
+        color: #333;
+      }
+
+      .chat-status {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 12px;
+        color: #666;
+      }
+
+      .status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #ccc;
+      }
+
+      .status-dot.online {
+        background: #4caf50;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .chat-messages {
+        flex: 1;
+        padding: 15px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .message {
+        max-width: 80%;
+      }
+
+      .message.message-user {
+        align-self: flex-end;
+      }
+
+      .message.message-user .message-content {
+        background: #007bff;
+        color: white;
+      }
+
+      .message.message-ai {
+        align-self: flex-start;
+      }
+
+      .message.message-ai .message-content {
+        background: #f1f3f4;
+        color: #333;
+      }
+
+      .message-content {
+        padding: 10px 15px;
+        border-radius: 18px;
+        font-size: 14px;
+        line-height: 1.4;
+        word-wrap: break-word;
+      }
+
+      .message-time {
+        font-size: 11px;
+        color: #999;
+        margin-top: 4px;
+        text-align: right;
+      }
+
+      .message-ai .message-time {
+        text-align: left;
+      }
+
+      .bottom-nav {
+        display: flex;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+        padding: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        padding: 8px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background 0.2s ease;
+      }
+
+      .nav-item:hover {
+        background: rgba(0, 0, 0, 0.05);
+      }
+
+      .nav-item.active {
+        background: rgba(0, 123, 255, 0.1);
+        color: #007bff;
+      }
+
+      .nav-icon {
+        font-size: 20px;
+      }
+
+      .nav-label {
+        font-size: 11px;
+        font-weight: 600;
+      }
+
+      /* 滚动条样式 */
+      .chat-messages::-webkit-scrollbar {
+        width: 4px;
+      }
+
+      .chat-messages::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 2px;
+      }
+
+      .chat-messages::-webkit-scrollbar-thumb {
+        background: #c1c1c1;
+        border-radius: 2px;
+      }
+
+      .chat-messages::-webkit-scrollbar-thumb:hover {
+        background: #a8a8a8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="phone-container">
+      <!-- 手机边框 -->
+      <div class="phone-frame">
+        <!-- 刘海 -->
+        <div class="notch"></div>
+
+        <!-- 状态栏 -->
+        <div class="status-bar">
+          <div class="status-left">
+            <span class="time" id="currentTime">14:30</span>
+          </div>
+          <div class="status-right">
+            <div class="battery">
+              <div class="battery-level" id="batteryLevel"></div>
+            </div>
+            <span class="signal">📶</span>
+          </div>
+        </div>
+
+        <!-- 主界面内容 -->
+        <div class="phone-content">
+          <!-- 角色状态卡片 -->
+          <div class="character-card">
+            <div class="character-avatar">
+              <div class="avatar-placeholder">👤</div>
+            </div>
+            <div class="character-info">
+              <h3 class="character-name" id="characterName">角色名称</h3>
+              <div class="character-stats">
+                <div class="stat-item">
+                  <span class="stat-label">健康</span>
+                  <div class="stat-bar">
+                    <div class="stat-fill health" id="healthBar"></div>
+                  </div>
+                  <span class="stat-value" id="healthValue">80%</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">心情</span>
+                  <div class="stat-bar">
+                    <div class="stat-fill mood" id="moodBar"></div>
+                  </div>
+                  <span class="stat-value" id="moodValue">65%</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">能量</span>
+                  <div class="stat-bar">
+                    <div class="stat-fill energy" id="energyBar"></div>
+                  </div>
+                  <span class="stat-value" id="energyValue">90%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 聊天界面 -->
+          <div class="chat-section">
+            <div class="chat-header">
+              <h4>聊天记录</h4>
+              <div class="chat-status">
+                <span class="status-dot online" id="statusDot"></span>
+                <span id="statusText">在线</span>
+              </div>
+            </div>
+            <div class="chat-messages" id="chatContainer">
+              <div class="message message-ai">
+                <div class="message-content">你好！今天感觉怎么样？</div>
+                <div class="message-time">14:30</div>
+              </div>
+              <div class="message message-user">
+                <div class="message-content">还不错，谢谢关心！</div>
+                <div class="message-time">14:32</div>
+              </div>
+              <div class="message message-ai">
+                <div class="message-content">有什么需要帮助的吗？</div>
+                <div class="message-time">14:33</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 底部导航 -->
+          <div class="bottom-nav">
+            <div class="nav-item active">
+              <span class="nav-icon">💬</span>
+              <span class="nav-label">聊天</span>
+            </div>
+            <div class="nav-item">
+              <span class="nav-icon">📊</span>
+              <span class="nav-label">状态</span>
+            </div>
+            <div class="nav-item">
+              <span class="nav-icon">⚙️</span>
+              <span class="nav-label">设置</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // 手机界面数据
+      let currentTime = '';
+      let batteryLevel = 85;
+      let characterName = '角色名称';
+      let health = 80;
+      let mood = 65;
+      let energy = 90;
+      let isOnline = true;
+
+      // 聊天消息数据
+      const messages = [
+        {
+          id: 1,
+          content: '你好！今天感觉怎么样？',
+          isUser: false,
+          time: '14:30',
+        },
+        {
+          id: 2,
+          content: '还不错，谢谢关心！',
+          isUser: true,
+          time: '14:32',
+        },
+        {
+          id: 3,
+          content: '有什么需要帮助的吗？',
+          isUser: false,
+          time: '14:33',
+        },
+      ];
+
+      // 更新时间
+      const updateTime = () => {
+        const now = new Date();
+        currentTime = now.toLocaleTimeString('zh-CN', {
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: false,
+        });
+        document.getElementById('currentTime').textContent = currentTime;
+      };
+
+      // 更新状态条
+      const updateStatusBars = () => {
+        document.getElementById('healthBar').style.width = health + '%';
+        document.getElementById('healthValue').textContent = health + '%';
+        document.getElementById('moodBar').style.width = mood + '%';
+        document.getElementById('moodValue').textContent = mood + '%';
+        document.getElementById('energyBar').style.width = energy + '%';
+        document.getElementById('energyValue').textContent = energy + '%';
+        document.getElementById('batteryLevel').style.width = batteryLevel + '%';
+      };
+
+      // 滚动到底部
+      const scrollToBottom = () => {
+        const chatContainer = document.getElementById('chatContainer');
+        if (chatContainer) {
+          chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+      };
+
+      // 添加消息
+      const addMessage = (content, isUser) => {
+        const now = new Date();
+        const time = now.toLocaleTimeString('zh-CN', {
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: false,
+        });
+        const messageClass = isUser ? 'message-user' : 'message-ai';
+        const messageHtml = `
+                <div class="message ${messageClass}">
+                    <div class="message-content">${content}</div>
+                    <div class="message-time">${time}</div>
+                </div>
+            `;
+        document.getElementById('chatContainer').insertAdjacentHTML('beforeend', messageHtml);
+        scrollToBottom();
+      };
+
+      // 模拟状态变化
+      const simulateStatusChange = () => {
+        // 随机调整状态值
+        health = Math.max(0, Math.min(100, health + (Math.random() - 0.5) * 10));
+        mood = Math.max(0, Math.min(100, mood + (Math.random() - 0.5) * 15));
+        energy = Math.max(0, Math.min(100, energy + (Math.random() - 0.5) * 8));
+        batteryLevel = Math.max(0, Math.min(100, batteryLevel + (Math.random() - 0.5) * 5));
+
+        // 更新显示
+        updateStatusBars();
+
+        // 随机添加消息
+        if (Math.random() < 0.3) {
+          const aiMessages = ['状态更新了！', '感觉好多了', '需要休息一下', '能量恢复中...'];
+          addMessage(aiMessages[Math.floor(Math.random() * aiMessages.length)], false);
+        }
+      };
+
+      // 初始化界面
+      document.addEventListener('DOMContentLoaded', () => {
+        console.log('手机界面加载成功！');
+
+        // 初始化状态
+        updateTime();
+        updateStatusBars();
+
+        // 设置定时器
+        const timeInterval = setInterval(updateTime, 1000);
+        const statusInterval = setInterval(simulateStatusChange, 5000);
+
+        // 初始滚动到底部
+        scrollToBottom();
+
+        // 清理定时器
+        window.addEventListener('beforeunload', () => {
+          clearInterval(timeInterval);
+          clearInterval(statusInterval);
+          console.log('手机界面已卸载');
+        });
+
+        // 导航点击事件
+        document.querySelectorAll('.nav-item').forEach(item => {
+          item.addEventListener('click', function () {
+            document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
+            this.classList.add('active');
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
+
