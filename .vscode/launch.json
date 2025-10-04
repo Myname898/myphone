@@ -2,6 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
+<<<<<<< HEAD
       "name": "调试酒馆网页(Chrome)",
       "type": "chrome",
       "request": "launch",
@@ -22,10 +23,32 @@
     },
     {
       "name": "调试酒馆网页(Edge)",
+=======
+      "name": "编译代码并调试酒馆网页 (Chrome)",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:6622",
+      "disableNetworkCache": true,
+      "internalConsoleOptions": "openOnSessionStart",
+      "cwd": "${workspaceFolder}",
+      "timeout": 100000,
+      "sourceMapPathOverrides": {
+        "src://tavern_helper_template/*": "${workspaceFolder}/*",
+        "webpack://tavern_helper_template/*": "${workspaceFolder}/*",
+      },
+      "skipFiles": [
+        "**/jquery*.min.js",
+        "**/node_modules/**"
+      ],
+    },
+    {
+      "name": "编译代码并调试酒馆网页 (Edge)",
+>>>>>>> 77de30304c6d069b0e0135197a237bdfdd044dfc
       "type": "msedge",
       "request": "launch",
       "preLaunchTask": "开始任务",
       "postDebugTask": "结束任务",
+<<<<<<< HEAD
       "url": "127.0.0.1:8000",
       "disableNetworkCache": true,
       "internalConsoleOptions": "openOnSessionStart",
@@ -37,6 +60,56 @@
       },
       "skipFiles": [
         "**/jquery*.min.js"
+=======
+      "url": "http://localhost:8000",
+      "disableNetworkCache": true,
+      "internalConsoleOptions": "openOnSessionStart",
+      "cwd": "${workspaceFolder}",
+      "timeout": 100000,
+      "sourceMapPathOverrides": {
+        "src://tavern_helper_template/*": "${workspaceFolder}/*",
+        "webpack://tavern_helper_template/*": "${workspaceFolder}/*",
+      },
+      "skipFiles": [
+        "**/jquery*.min.js",
+        "**/node_modules/**"
+      ],
+    },
+    {
+      "name": "仅调试酒馆网页 (Chrome)",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:8000",
+      "disableNetworkCache": true,
+      "internalConsoleOptions": "openOnSessionStart",
+      "cwd": "${workspaceFolder}",
+      "timeout": 100000,
+      "sourceMapPathOverrides": {
+        "src://tavern_helper_template/*": "${workspaceFolder}/*",
+        "webpack://tavern_helper_template/*": "${workspaceFolder}/*",
+      },
+      "skipFiles": [
+        "**/jquery*.min.js",
+        "**/node_modules/**"
+      ],
+    },
+    {
+      "name": "仅调试酒馆网页 (Edge)",
+      "type": "msedge",
+      "request": "launch",
+      "url": "http://localhost:8000",
+      "disableNetworkCache": true,
+      "internalConsoleOptions": "openOnSessionStart",
+      "cwd": "${workspaceFolder}",
+      "timeout": 100000,
+      "sourceMapPathOverrides": {
+        "src://tavern_helper_template/*": "${workspaceFolder}/*",
+        "webpack://tavern_helper_template/*": "${workspaceFolder}/*",
+      },
+      "skipFiles": [
+        "**/jquery*.min.js",
+        "**/node_modules/**"
+>>>>>>> 77de30304c6d069b0e0135197a237bdfdd044dfc
       ],
     }
   ]
