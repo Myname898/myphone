@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 import dedent from 'dedent';
 
+=======
+>>>>>>> e0122030df488a5403fb83e8cd5b4d1a5110a013
 $(async () => {
   const message_id = getLastMessageId();
   if (message_id !== 0) {
